@@ -1,5 +1,9 @@
 # AWS Developer
 
+O curso preparatório para certificação AWS Developer tem como objetivo ensinar todos os serviços que são cobrados no exame. Veremos cada serviço com a profundidade que será cobrada no dia da prova. Além de materiais em texto teremos também laboratórios para colocar em pratica o ensinamento ao decorrer dos módulos do curso.
+
+**Data da prova: 10/12/2022** 📝
+
 #### Legenda:
 
 | Status       | Ícone |
