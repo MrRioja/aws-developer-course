@@ -12,13 +12,13 @@
 - Pode ser configurado o Multi Factor Authentication (MFA).
 - IAM tem policies pré definidas (**_Managed policies_**)
 
-# IAM Federation
+## IAM Federation
 
 - Grandes empresas normalmente integram seu repositório de usuários com IAM.
 - Identity Federation usa o padrão SAM (active directory).
 - Dessa forma os usuários pode acessar AWS usando a credenciais da empresa.
 
-# IAM - MUITO IMPORTANTE
+## IAM - MUITO IMPORTANTE
 
 - Credenciais IAM **NUNCA** devem ser compartilhadas.
 - Nunca coloque suas credenciais no código da sua aplicação.
