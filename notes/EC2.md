@@ -1,7 +1,9 @@
 # EC2 (Elastic Compute Cloud)
 
+#### Para conectar via SSH à uma instancia EC2:
+
 - Baixar a chave para conexão SSH.
-- Aplicar: `chmod 400 ec2keypair.pem` para modificar a segurança do arquivo.
+- Aplicar: `chmod 400 ec2keypair.pem` para modificar a segurança do arquivo. Por padrão,
 - Executar comando de execução que estará disponível no console.
 
 # EC2 Tipos de instancias
