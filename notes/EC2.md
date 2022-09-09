@@ -93,17 +93,41 @@ echo "My web server - Address: $(hostname -f)" > /var/www/html/index.html
 - Elastic IP que esteja criado e não anexado a nenhuma instancia será cobrado.
 - Recomendado apenas para desenvolvimento e seu uso em produção demonstra uma arquitetura de baixa qualidade.
 
-## Load Balancer
+## ELB - EC2 Load Balancer
 
-Podem ser exposto para rede publica e privada.
+- São servidores que distribuem o trafego entre instancias EC2.
+- Somente o DNS do Load Balancer é visto pelos clientes.
+- Oferece SSL (HTTPS) para usa aplicação.
+- Opção Stickness com cookies. Durante uma mesma sessão o cliente sempre é enviado para a mesma instancia EC2. E é gerenciado pelo Load Balancer.
+- Separa trafego publico e privado.
+- Podem ser configurados para rede publica e privada.
 
 ### Tipos de load balancer
 
-- **_Classic Load Balancer_** - 2009 Obsoleto.
-- **_Application Load Balancer_** - 2016, suporta HTTP, HTTPS e Websocket, suporta SSL, pode rotear baseado em path e hostname.
-- Network Load Balancer - 2017, TCP.
+- **CLB - _Classic Load Balancer_** - 2009.
+  - Obsoleto.
+  - Suporta SSL.
+- **ALB - _Application Load Balancer_** - 2016:
+  - Trabalha na layer 7.
+  - Suporta SSL.
+  - Múltiplas aplicações HTTP em maquinas diferentes (Target Groups).
+  - Múltiplas aplicações HTTP na mesma máquina (Containers).
+  - Load Balancing baseado em rotas(URL).
+  - Load Balancing baseado em hostname(URL).
+  - Excelente para aplicações rodando em containers (Ex: ECS).
+  - Recurso de Port Mapping para redirecionar para porta dinâmica.
+  - Suporta HTTP/HTTP e protocolo websocket.
+  - A aplicação não vê o endereço IP da máquina cliente.
+- **NLB - _Network Load Balancer_** - 2017, TCP.
+  - Trabalha na layer 4.
+  - Direciona tráfego TCP para instâncias.
+  - Capacidade para milhões de instancias.
+  - Suporta IP estático ou Elastic IP.
+  - Menor latência. ~100ms VS 400ms da ALB.
+  - Pode ver IP do cliente diretamente.
+  - Usado em aplicações com alto volume de tráfego.
 
-> **TODOS** os tipos de Load Balancer possuem DNS. **NÃO** user endereço IP.
+> **TODOS** os tipos de Load Balancer possuem DNS e fazem health check. **NÃO** usar endereço IP.
 
 Por padrão as instancias não possuem acesso ao IP do cliente final, mas ele pode ser acessado através do header:
 
@@ -111,12 +135,17 @@ Por padrão as instancias não possuem acesso ao IP do cliente final, mas ele po
 - `X-Forwarded-Port` - Porta da requisição.
 - `X-Forwarded-Proto` - Qual o proto da requisição.
 
-`Erro 503` - Capacidade máxima atingida ou target não definido
+#### Erros Load Balancer
 
-## Health Check
+- `4XX` - Erros gerados pelo cliente.
+- `5XX` - Erros gerados pela aplicação.
+- `Erro 503` - Capacidade máxima atingida ou target não definido.
 
-- Health Check verifica se as instancias são capazes de atender as requisições.
-- São executados em portas e caminhos específicos.
+## ELB - Health Check
+
+- Health check é crucial para o funcionamento do Load Balancer.
+- Health Check verifica se as instancias são capazes de responder as requisições.
+- São executados em portas e caminhos específicos. Ex: `/health`. E se a resposta não for `200 (OK)` a instância é considerada deficiente e o Load Balancer para de enviar trafego para ela.
 
 ## Auto Scaling Group
 
