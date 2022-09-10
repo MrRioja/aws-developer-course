@@ -79,6 +79,12 @@ systemctl enable httpd.service
 echo "My web server - Address: $(hostname -f)" > /var/www/html/index.html
 ```
 
+## EC2 - Launch template
+
+O Launch Template é um modelo de criação de instâncias que podemos criar para iniciar instâncias a partir dele. É um modelo com todas as opções que temos quando criamos uma instância manualmente e que podemos versionar e modificar sempre que necessário.
+
+- É uma boa prática sempre que criarmos um novo modelo testar a criação de uma instância a partir dele para assegurar de que está tudo configurado conforme o esperado.
+
 ## AMI (Amazon Machine Image)
 
 - Possui imagens já disponibilizadas e que podem ser personalizadas através do User Data.
@@ -160,7 +166,7 @@ Cria e remove instancias EC2.
 - Instancias problemáticas iniciadas pelo ASG são substituídas por novas instancias também criadas pelo ASG.
 - Instancias problemáticas podem ser identificadas pelo ASG e Load Balancer.
 
-## EBS (Elastic Block Storage)
+## EBS - Elastic Block Storage
 
 - Permite que os dados não se percam quando uma instancia EC2 seja terminada.
 - É um driver de rede.
