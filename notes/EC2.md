@@ -160,11 +160,19 @@ Cria e remove instancias EC2.
 - **_Scale out_** - Cria instancias para atender o aumento da demanda. Sempre as registra no Load Balancer automaticamente.
 - **_Scale in_** - Remove instancias EC2 por tolerar a demanda atual.
 
+- É possível escalonar um ASG baseado em alarmes do CloudWatch.
+
 - Pode ser acionado por uso de CPU, network, agendamentos ou por Custom Metrics.
+
 - Usa Launch configurations.
+
 - IAM Roles da ASG serão atribuídos a instância EC2 criada.
+
 - Instancias problemáticas iniciadas pelo ASG são substituídas por novas instancias também criadas pelo ASG.
+
 - Instancias problemáticas podem ser identificadas pelo ASG e Load Balancer.
+
+- Podemos enviar Custom Metrics da aplicação EC2 para o CloudWatch usando **PutMetrics API**.
 
 ## EBS - Elastic Block Storage
 
