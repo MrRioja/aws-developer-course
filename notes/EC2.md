@@ -85,6 +85,20 @@ O Launch Template é um modelo de criação de instâncias que podemos criar par
 
 - É uma boa prática sempre que criarmos um novo modelo testar a criação de uma instância a partir dele para assegurar de que está tudo configurado conforme o esperado.
 
+## EC2 - Teste de stress
+
+Abaixo script útil para fazer teste de stress em instâncias EC2:
+
+```bash
+for i in $(seq $(getconf _NPROCESSORS_ONLN)); do yes > /dev/null & done
+```
+
+Após o stress, podemos executar o comando abaixo para matar o processo de stress:
+
+```bash
+kill -9 PID
+```
+
 ## AMI (Amazon Machine Image)
 
 - Possui imagens já disponibilizadas e que podem ser personalizadas através do User Data.
@@ -153,7 +167,7 @@ Por padrão as instancias não possuem acesso ao IP do cliente final, mas ele po
 - Health Check verifica se as instancias são capazes de responder as requisições.
 - São executados em portas e caminhos específicos. Ex: `/health`. E se a resposta não for `200 (OK)` a instância é considerada deficiente e o Load Balancer para de enviar trafego para ela.
 
-## Auto Scaling Group
+## ASG - Auto Scaling Group
 
 Cria e remove instancias EC2.
 
@@ -183,20 +197,23 @@ Cria e remove instancias EC2.
 - Não pode ser associado a uma instancia EC2 de outra availability zone.
 - É possível aumentar o tamanho depois de criado. - Após aumentar é necessário reparticionar.
 - Pode ser feito backup do EBS usando o Snapshot, que terá o tamanho do volume usado e não o total do volume.
-- Criptografado usando KMS.
-- Volumes EBS root é terminado quando a instancia EC2 é terminada.
+- Criptografado usando KMS (AES-256).
+- Volumes EBS root é terminado quando a instancia EC2 é terminada, por padrão.
 
-## Snapshot
-
-São usados para migração:
-
-- Diminuir volumes.
-- Mudar o tipo de volume.
-- Criptografar um volume.
-
-Tipos de volumes:
+### EBS - Tipos de volumes
 
 - **_GP2 (General Purpose SSD)_**: Meio termo entre preço e performance.
 - **_IOI_**: Alta performance, baixa latência e alto custo.
 - **_STI (HDD)_**: Baixo custo. Acesso frequente.
 - **_SCI (HDD)_**: Mais barato de todos. Acesso não frequente.
+
+## EBS - Snapshot
+
+São usados para:
+
+- Fazer backup.
+- Salvar dados em caso de catástrofe.
+- Migração:
+  - Diminuir volumes.
+  - Mudar o tipo de volume.
+  - Criptografar um volume.
