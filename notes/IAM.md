@@ -10,13 +10,13 @@
   - **Groups** - Atribuído a times e funções.
   - **Roles** (atribuição/papeis) - Atribuído a recursos AWS.
 - Pode ser configurado o Multi Factor Authentication (MFA).
-- IAM tem policies pré definidas (**_Managed policies_**)
+- IAM tem policies pré definidas (**_Managed policies_**).
+- Podemos criar um alias para nossa conta AWS.
 
 ## IAM Federation
 
 - Grandes empresas normalmente integram seu repositório de usuários com IAM.
-- Identity Federation usa o padrão SAM (active directory).
-- Dessa forma os usuários pode acessar AWS usando a credenciais da empresa.
+- Identity Federation usa o padrão SAM (active directory) dessa forma os usuários pode acessar AWS usando a credenciais da empresa.
 
 ## IAM - MUITO IMPORTANTE
 
