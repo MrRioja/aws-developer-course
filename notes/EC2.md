@@ -3,7 +3,7 @@
 **Para conectar via SSH à uma instancia EC2:**
 
 - Baixar a chave para conexão SSH.
-- Aplicar: `chmod 400 ec2keypair.pem` para modificar a segurança do arquivo. Por padrão,
+- Aplicar: `chmod 400 ec2keypair.pem` para modificar a segurança do arquivo.
 - Executar comando de execução que estará disponível no console.
 
 ## EC2: Tipos de instancias
@@ -195,7 +195,7 @@ Cria e remove instancias EC2.
 - Pode ser desanexado de uma instancia e anexado em uma outra instancia.
 - Pertence a somente um Availability Zone.
 - Não pode ser associado a uma instancia EC2 de outra availability zone.
-- É possível aumentar o tamanho depois de criado. - Após aumentar é necessário reparticionar.
+- É possível aumentar o tamanho depois de criado. Após aumentar é necessário reparticionar.
 - Pode ser feito backup do EBS usando o Snapshot, que terá o tamanho do volume usado e não o total do volume.
 - Criptografado usando KMS (AES-256).
 - Volumes EBS root é terminado quando a instancia EC2 é terminada, por padrão.
