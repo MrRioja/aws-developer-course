@@ -1,0 +1,22 @@
+# AWS VPC (Virtual Private Cloud)
+
+- É criado dentro de uma Region.
+- VPC contém subnets.
+- Cada subnet é associada à uma AZ.
+- Subnet pode ser pública ou privada.
+- Podemos ter varias subnets em uma AZ.
+- Public subnets podem conter:
+  - Load balancer.
+  - Static websites.
+  - Files.
+  - Public Authentication layers.
+- Private subnets podem conter:
+  - Servidores web.
+  - Banco de dados.
+- Public e Private subnets podem se comunicar se estiverem no mesmo VPC e com permissões concedidas no Security Groups.
+- Todas as novas contas AWS tem um Default VPC.
+- É possível usar VPN para conectar com VPC e acessar todos os endereços privados.
+- VPC Flow Logs permitem monitorar tráfego que entra e sai do VPC.
+- VPC pertence a uma conta e um Region.
+- Alguns recursos AWS podem ser criados dentro de um VPC e outros não.
+- É possível conectar VPC's usando Peer VPC para mesma conta ou outra conta.
