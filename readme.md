@@ -4,7 +4,7 @@ O curso preparatório para certificação AWS Developer tem como objetivo ensina
 
 **Data da prova: 10/12/2022** 📝
 
-#### Legenda:
+## Legenda
 
 | Status       | Ícone |
 | ------------ | ----- |
@@ -20,13 +20,22 @@ Nessa seção foi apresentada a estrutura do curso, como funciona o exame da cer
 
 > Foi configurado um orçamento de US$ 1 com um alerta de custo > 70%.
 
-### Seção 2: Fundamentos AWS: IAM e EC2 📚
+### Seção 2: Fundamentos AWS: IAM e EC2 ✅
 
-### Seção 3: Fundamentos AWS: ELB, ASG E EBS 📌
+Nessa sessão foram apresentadas as possibilidades de configuração e integrações disponíveis no IAM, bem como as boas práticas na concessão de acessos aos usuários. Também foram apresentadas as possibilidades que o serviço EC2 nos oferece, as quais foram exploradas visando o que é cobrado no exame e o que pertence às boas praticas de uso do serviço.
+Aqui estão as anotações dos serviços feitas durante as aulas: [IAM](./notes/IAM.md) e [EC2](./notes/EC2.md).
 
-### Seção 4: Fundamentos AWS: Route 53, RDS, ElasticCache e VPC 📌
+### Seção 3: Fundamentos AWS: ELB, ASG E EBS ✅
 
-### Seção 5: Fundamentos AWS: Amazon S3 📌
+Durante essa sessão ocorreram diversos laboratórios visando a integração de instâncias EC2 com Load Balancer, Auto Scaling Group e Elastic Block Storage.
+Seguem as anotações feitas durante as aulas sobre os serviços
+[ELB](./notes/EC2.md), [ASG](./notes/EC2.md) e [EBS](./notes/EC2.md).
+
+### Seção 4: Fundamentos AWS: Route 53, RDS, ElasticCache e VPC ✅
+
+Foi estudado nessa sessão boas práticas ao utilizar os respectivos serviços, como migrar um domínio para AWS utilizando o Route 53, boas praticas ao utiliza-los e mais outras configurações e funcionalidades que estão escritas em detalhes nos arquivos de anotações dos serviços: [Route 53](./notes/Route%2053.md), [RDS](./notes//RDS.md), [ElastiCache](./notes/ElastiCache.md) e [VPC](./notes/VPC.md).
+
+### Seção 5: Fundamentos AWS: Amazon S3 📚
 
 ### Seção 6: AWS CLI, SDK, IAM Role e Policies 📌
 
