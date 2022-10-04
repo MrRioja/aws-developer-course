@@ -35,9 +35,11 @@ Seguem as anotações feitas durante as aulas sobre os serviços
 
 Foi estudado nessa sessão boas práticas ao utilizar os respectivos serviços, como migrar um domínio para AWS utilizando o Route 53, boas praticas ao utiliza-los e mais outras configurações e funcionalidades que estão escritas em detalhes nos arquivos de anotações dos serviços: [Route 53](./notes/Route%2053.md), [RDS](./notes//RDS.md), [ElastiCache](./notes/ElastiCache.md) e [VPC](./notes/VPC.md).
 
-### Seção 5: Fundamentos AWS: Amazon S3 📚
+### Seção 5: Fundamentos AWS: Amazon S3 ✅
 
-### Seção 6: AWS CLI, SDK, IAM Role e Policies 📌
+Durante esse módulo foram vistos conceitos de versionamento de objetos, suas regras e suas propriedades. Também foram abordados temas como versionamento de objetos, criptografia, segurança, websites estáticos no S3, CORS, Consistence Model e ganho de performance com key names adequados aos nossos objetos. Seguem as anotações feitas em aula sobre o serviço [S3](./notes/S3.md).
+
+### Seção 6: AWS CLI, SDK, IAM Role e Policies 📚
 
 ### Seção 7: AWS Elastic Beanstalk 📌
 
