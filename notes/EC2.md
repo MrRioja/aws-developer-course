@@ -99,6 +99,40 @@ Após o stress, podemos executar o comando abaixo para matar o processo de stres
 kill -9 PID
 ```
 
+## EC2 - EC2 Instance Metadata
+
+- Permite que uma instância EC2 aprenda sobre si própria.
+- [URL para acesso do Instance Metadata](http://169.254.169.254/latest/meta-data).
+- É possível recuperar o nome do IAM Role pelo metadata, mas você NÃO pode recuperar o IAM Policy.
+- Metadata: Informações sobre a instância EC2 disponíveis:
+  - ami-id.
+  - ami-launch-index.
+  - ami-manifest-path.
+  - auth-identity-credentials/.
+  - block-device-mapping/.
+  - events/.
+  - hostname.
+  - iam/.
+  - identity-credentials/.
+  - instance-action.
+  - instance-id.
+  - instance-life-cycle.
+  - instance-type.
+  - local-hostname.
+  - local-ipv4.
+  - mac.
+  - metrics/.
+  - network/.
+  - placement/.
+  - profile.
+  - public-hostname.
+  - public-ipv4.
+  - public-keys/.
+  - reservation-id.
+  - security-groups.
+  - services/.
+  - system.
+
 ## AMI (Amazon Machine Image)
 
 - Possui imagens já disponibilizadas e que podem ser personalizadas através do User Data.
