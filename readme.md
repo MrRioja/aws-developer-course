@@ -39,9 +39,11 @@ Foi estudado nessa sessão boas práticas ao utilizar os respectivos serviços, 
 
 Durante esse módulo foram vistos conceitos de versionamento de objetos, suas regras e suas propriedades. Também foram abordados temas como versionamento de objetos, criptografia, segurança, websites estáticos no S3, CORS, Consistence Model e ganho de performance com key names adequados aos nossos objetos. Seguem as anotações feitas em aula sobre o serviço [S3](./notes/S3.md).
 
-### Seção 6: AWS CLI, SDK, IAM Role e Policies 📚
+### Seção 6: AWS CLI, SDK, IAM Role e Policies ✅
 
-### Seção 7: AWS Elastic Beanstalk 📌
+Nessa sessão vimos como nos conectar com a API da AWS através da CLI ou das SDKs disponíveis para as mais variadas linguagens de programação. Também vimos quais são as praticas recomendadas para cada cenário diferente e aonde as Policies e IAM Roles se enquadram dentro desses cenários. Aqui estão as anotações feitas em aula sobre [AWS CLI](./notes/AWS%20CLI.md), [AWS SDK](./notes/AWS%20SDK.md) e [EC2 Instance Metadata](./notes/EC2.md).
+
+### Seção 7: AWS Elastic Beanstalk 📚
 
 ### Seção 8: Ferramentas do desenvolvedor 📌
 
