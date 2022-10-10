@@ -81,3 +81,42 @@
 ## ElasticBeanStalk - Comparação entre os deployments mode
 
 ![Deployment's mode comparative](../readme/deployments-mode.png)
+
+## ElasticBeanStalk - Extensions
+
+- Deve ser feito upload do arquivo zip para o BeanStalk.
+- Configuração pode ser feita pelo console ou por arquivo.
+- Requerimento:
+  - Pasta `.ebextensions` no root do código fonte.
+  - Nos formatos YAML ou JSON.
+  - Extensão `.config`. Exemplo: `logging.config`.
+  - Pode-se modificar alguns recursos tais como RDS, ElastiCache, DynamoDB.
+- Recursos gerenciados pelo `.ebextensions` são apagados quando o environment é apagado.
+
+## ElasticBeanStalk - CLI
+
+- É possível instalar um CLI chamado EB CLI para trabalhar com ElasticBeanStalk usando CLI.
+- Comandos básicos:
+  - eb create.
+  - eb status.
+  - eb health.
+  - eb events.
+  - eb logs.
+  - eb open.
+  - eb deploy.
+  - eb config.
+  - eb terminate.
+- Muito útil para automatizar publicação utilizando pipelines.
+
+## ElasticBeanStalk - Como funciona
+
+- Utiliza o CloudFormation.
+
+## ElasticBeanStalk - Mecanismo
+
+- Descreve dependências:
+  - Python usa o arquivo `requirements.txt` e o NodeJS o `package.json`.
+- Código deve ser em formato zip.
+- Arquivo zip é carregado para cada instância EC2.
+- Cada instância EC2 resolve Dependencies (lento).
+- Para casos de deploys longos as dependências podem ser adicionadas junto com o código fonte da aplicação para melhorar a performance.
