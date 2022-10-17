@@ -118,3 +118,54 @@
 - Se CodePipeline falhar em um estágio, seu pipeline para e você pode receber informações sobre o erro no console AWS.
 - AWS CloudTrail pode ser usado para auditar AWS API Calls.
 - Se pipeline não puder executar uma tarefa, confira se IAM Service Role que esta associado tem permissão suficiente (IAM Policy).
+
+## AWS CodeBuild
+
+- Serviço de build gerenciado pela AWS.
+- Alternativa para usar como ferramenta de build, similar ao Jenkins.
+- Continuous Scaling (Sem servidor para gerenciar ou provisionar).
+- Cobrado somente pelo tempo que demora para completar a build.
+- Utiliza Docker nos bastidores.
+- Possibilidade de estender a capacidade usando nossa própria base do Docker.
+- Segurança: Integração com KMS para criptografar os artifacts, IAM para build, VPC para segurança de rede, CloudTrail para API calls logging.
+- Source code pode ser do Github, CodeCommit, S3.
+- Instruções para oa build podem ser definidas no arquivo `buildspec.yml`.
+- Logs podem ser enviados para Amazon S3 e AWS CloudWatch Logs.
+- Metrics para monitorar estatísticas do CodeBuild.
+- Use CloudWatch Alarm para detectar falhas no build e enviar notificações.
+- CloudWatch Events/AWS Lambda como Glue.
+- Notificações SNS.
+- Possibilidade de reproduzir CodeBuild localmente para troubleshooting em caso de erro.
+- Pipeline pode ser definido dentro do CodePipeline ou dentro do próprio CodeBuild.
+
+### AWS CodeBuild - Ambientes suportados
+
+- Java.
+- Ruby.
+- Python.
+- GO.
+- NodeJS.
+- Android.
+- .NET Core.
+- PHP.
+- Docker - para usar qualquer ambiente desejado.
+
+### AWS CodeBuild - buildspec
+
+- Arquivo `buildspec.yml` deve estar na raiz do projeto.
+- Define as Environments Variables:
+  - Plaintext variables.
+  - Secure secrets: Utiliza SSM Parameter Store.
+- Phases (define os comandos a serem executados):
+  - Install: Instala as dependências necessárias para a build.
+  - Pre Build: Comando final para ser executado antes da build.
+  - Build: Comando para construir a build.
+  - Post Build: Etapa final, usada por exemplo para criar arquivo zip.
+- Artifacts: O que vai ser atualizado no S3 (criptografado pelo KMS).
+- Cache: Arquivos para por no cache para acelerar builds futuras.
+
+### AWS CodeBuild - Local build
+
+- O Local Build serve para casos onde é necessário uma investigação mais profunda para identificar problemas onde os logs não são suficientes.
+- É possível rodar CodeBuild localmente com Docker.
+- Utilizar CodeBuild Agent.
