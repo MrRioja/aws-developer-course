@@ -169,3 +169,69 @@
 - O Local Build serve para casos onde é necessário uma investigação mais profunda para identificar problemas onde os logs não são suficientes.
 - É possível rodar CodeBuild localmente com Docker.
 - Utilizar CodeBuild Agent.
+
+## AWS CodeDeploy
+
+- Faz deploy de aplicação automaticamente para várias instâncias EC2.
+- Essas instâncias não são gerenciadas pelo ElasticBeanStalk.
+- Existem muitas formas de lidar com deployments usando ferramentas open source como: Ansible, Terraform, Chef, Puppet e etc...
+- Podemos utilizar o CodeDeploy que é gerenciado pela AWS.
+- Instâncias EC2 são agrupadas pelo Deployment group.
+- Várias opções para definir o tipo de deployment.
+- CodeDeploy pode ser integrado com CodePipeline e usar Artifacts.
+- CodeDeploy pode reusar ferramentas de configuração, funciona com qualquer aplicação, integração com Auto Scaling.
+- Blue/Green deployment só funciona com EC2, não funciona com On Premise.
+- Suporta AWS Lambda Deployment.
+- CodeDeploy não faz provisão de recursos.
+
+### AWS CodeDeploy - Etapas
+
+- Instâncias EC2 ou máquinas On Premise devem ter o CodeDeploy Agent instalado.
+- Agent monitora continuamente o AWS CodeDeploy.
+- CodeDeploy envia o `appspec.yml`.
+- Aplicação é baixada do GitHub ou S3.
+- EC2 executará as instruções recebidas.
+- CodeDeploy Agent reportará sucesso ou falha no deployment.
+
+### AWS CodeDeploy - Componentes
+
+- Application: Nome único.
+- Compute Platform: EC2/On-Premise ou Lambda.
+- Deployment Configuration: Regras do Deployment para sucesso ou falha:
+  - EC2/On-premise: Pode-se especificar o número mínimo de EC2 saudável para deployment.
+  - AWS Lambda: Pode-se especificar como o tráfego será roteado para atualizar o Lambda Function.
+- Deployment Group: Grupo de instância com tag.
+- Deployment type: In-Place ou Blue/Green.
+- Application Revision: Código da aplicação + `appspec.yml`.
+- Service Role: Role para CodeDeploy realizar as tarefas necessárias.
+- Target Revision: Destino da versão da aplicação.
+
+### AWS CodeDeploy - Appspec
+
+- File Section: Como copiar os arquivos do Github/S3 para o destino.
+- Hooks: Conjunto de instruções para deploy da nova versão. Hooks podem ter timeouts.
+- Em ordem:
+  - ApplicationStop.
+  - DownloadBundle.
+  - BeforeInstall.
+  - Install.
+  - AfterInstall.
+  - ApplicationStart.
+  - ValidateService.
+
+### AWS CodeDeploy - Deployment config
+
+- Configs:
+  - One at time: Uma de cada vez. Se uma falhar o deployment para.
+  - Half at time: Metade das instâncias por vez.
+  - All at once: Todas instâncias são atualizadas de uma vez. Rápido podem possui downtime e é mais utilizada em desenvolvimento.
+  - Custom: Deployment personalizado.
+- Failures:
+  - Instâncias ficam em **_Failed state_**.
+  - Novos deployments começam primeiro pelas instâncias em **_Failed state_**.
+  - Rollback: Faz deploy do código anterior ou habilita rollback automático quando uma falha acontecer.
+- Deployment Targets:
+  - Grupo de instâncias EC2 com tags.
+  - Direcionado para um ASG.
+  - Mistura de ASG e Tags para criar deployment segments.
+  - Personalização de scripts com variável de ambiente DEPLOYMENT_GROUP_NAME.
