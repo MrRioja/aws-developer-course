@@ -43,11 +43,16 @@ Durante esse módulo foram vistos conceitos de versionamento de objetos, suas re
 
 Nessa sessão vimos como nos conectar com a API da AWS através da CLI ou das SDKs disponíveis para as mais variadas linguagens de programação. Também vimos quais são as praticas recomendadas para cada cenário diferente e aonde as Policies e IAM Roles se enquadram dentro desses cenários. Aqui estão as anotações feitas em aula sobre [AWS CLI](./notes/AWS%20CLI.md), [AWS SDK](./notes/AWS%20SDK.md) e [EC2 Instance Metadata](./notes/EC2.md).
 
-### Seção 7: AWS Elastic Beanstalk 📚
+### Seção 7: AWS Elastic Beanstalk ✅
 
-### Seção 8: Ferramentas do desenvolvedor 📌
+Nesse tópico foram abordadas todas as características do BeanStalk, bem como as plataformas suportadas, sua CLI, mecanismo, tipos de deployments e seu funcionamento.
+As anotações desse capitulo foram registras [nesse arquivo](./notes/ElasticBeanStalk.md).
 
-### Seção 9: AWS CloudFormation 📌
+### Seção 8: Ferramentas do desenvolvedor ✅
+
+Essa seção foi voltada para ferramentas para desenvolvedores dentro da AWS. Foram estudados serviços como CodeCommit, CodeBuild, CodePipeline e CodeDeploy. Todos os detalhes de cada um desses serviços foram documentados [aqui](./notes/AWS%20CICD.md).
+
+### Seção 9: AWS CloudFormation 📚
 
 ### Seção 10: Monitoring and Audit 📌
 
