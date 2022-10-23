@@ -52,9 +52,12 @@ As anotações desse capitulo foram registras [nesse arquivo](./notes/ElasticBea
 
 Essa seção foi voltada para ferramentas para desenvolvedores dentro da AWS. Foram estudados serviços como CodeCommit, CodeBuild, CodePipeline e CodeDeploy. Todos os detalhes de cada um desses serviços foram documentados [aqui](./notes/AWS%20CICD.md).
 
-### Seção 9: AWS CloudFormation 📚
+### Seção 9: AWS CloudFormation ✅
 
-### Seção 10: Monitoring and Audit 📌
+Aqui vimos como funciona o CloudFormation, quais suas principais vantagens e características, quais os formatos possíveis para o arquivo de Template, as estruturas dos templates e como fazer deploy de um CloudFormation Template.
+Todas as anotações foram registradas nesse [arquivo](./notes/AWS%20CloudFormation.md).
+
+### Seção 10: Monitoring and Audit 📚
 
 ### Seção 11: AWS Integração e Messaging 📌
 
