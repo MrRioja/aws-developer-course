@@ -143,3 +143,68 @@
   - Environment.
 - Permite um controle seguro sobre o template.
 - Use parameters quando os valores devem ser definidos pelo usuário.
+
+### AWS CloudFormation - Acessando valores dos mapping
+
+- Fn:FindInMap:
+  - Retorna o valor de uma key.
+  - Por exemplo: !FindInMap[MapName, TopLevelKey, SecondLevelKey].
+
+## AWS CloudFormation - Outputs
+
+- Declara valores que podem ser importados por outros stacks.
+- Pode-se ver o Output no console AWS ou usando AWS CLI.
+- Outputs são úteis quando você define uma rede no CloudFormation e o Output é variável, tal como VPC ID e Subnet ID.
+- É a melhor forma de colaborar usando Stacks. Cada expert desenvolve uma stack e exporta as variáveis.
+- Não é possível deletar uma stack CloudFormation se um Output estiver sendo referenciado por outra Stack no CloudFormation.
+
+### AWS CloudFormation - Cross stack reference
+
+- Para importar um Output de outra stack utilizamos a função **Fn::ImportValue** ou **!ImportValue**.
+
+## AWS CloudFormation - Conditions
+
+- Conditions são usadas para criar Resources ou Outputs baseado em uma condição.
+- Conditions podem ser qualquer condição desejada, como por exemplo um environment, Region, Any Parameter Value e etc.
+- Cada Condition pode referenciar outros Conditions, Parameter Value ou Mapping.
+
+### AWS CloudFormation - Como definir Conditions
+
+- Funções que podem ser utilizadas (lógicas):
+  - Fn::And ou !And.
+  - Fn::Equals ou !Equals.
+  - Fn::If ou !If.
+  - Fn::Not ou !Not.
+  - Fn::Or ou !Or.
+- As Conditions podem ser aplicadas a Resources, Output e etc.
+
+## AWS CloudFormation - Intrinsic Functions
+
+- Fn::Ref - !Ref.
+  - É usado ara referenciar:
+    - Parameters: Retorna o valor do Parameter.
+    - Resources: Retorna o ID físico do Resource.
+- Fn::GetAtt - !GetAtt.
+  - Atributos são anexados aos recursos que você cria.
+  - Pode ser usando por exemplo pra saber qual o AvailabilityZone de uma instância EC2.
+- Fn::FindInMap - !FindInMap.
+  - Retorna o valor de uma key no Mapping escolhido.
+- Fn::ImportValue - !ImportValue.
+  - Importa valores que são exportados de outros templates.
+- Fn::Join - !Join.
+  - Une valores com um delimitador.
+    - !Join [delimiter, [comma-delimited list of values]].
+  - Por exemplo, para formar **"x:y:z"** podemos fazer:
+    - !Join [":", [a, b, c]].
+- Fn::Sub - !Sub.
+  - É usado para substituir variáveis de um texto. Permite personalizar seu template.
+- Condition Function.
+
+## AWS CloudFormation - Rollback
+
+- Stack Creation Fails:
+  - Default: Tudo volta como era antes (rollback). Tudo é registrado nos logs.
+  - Opção para desabilitar o rollback e investigar o problema.
+- Stack Update Fails:
+  - Stack automaticamente volta para o estágio anterior.
+  - Possibilidade de ver logs e saber o que aconteceu de errado.
