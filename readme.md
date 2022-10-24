@@ -57,9 +57,12 @@ Essa seção foi voltada para ferramentas para desenvolvedores dentro da AWS. Fo
 Aqui vimos como funciona o CloudFormation, quais suas principais vantagens e características, quais os formatos possíveis para o arquivo de Template, as estruturas dos templates e como fazer deploy de um CloudFormation Template.
 Todas as anotações foram registradas nesse [arquivo](./notes/AWS%20CloudFormation.md).
 
-### Seção 10: Monitoring and Audit 📚
+### Seção 10: Monitoring and Audit ✅
 
-### Seção 11: AWS Integração e Messaging 📌
+Nessa seção foi abordado os serviços de monitoria e auditoria de logs. Foram vistas as principais funcionalidades do AWS X-Ray, CloudTrail e CloudWatch, bem como suas vantagens e propósitos.
+Todos os detalhes dos serviços vistos nessa seção se encontram [nesse arquivo](./notes/AWS%20Monitoring%2C%20audit%20and%20troubleshooting.md).
+
+### Seção 11: AWS Integração e Messaging 📚
 
 ### Seção 12: AWS Serverless Lambda 📌
 
