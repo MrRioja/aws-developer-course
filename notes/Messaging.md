@@ -70,3 +70,51 @@
 - O Long Pooling diminui o número de chamadas a SQS API e aumenta a eficiência da aplicação.
 - O Wait Time pode ser ajustado entre 1 e 20 segundos, que é a recomendação na maioria dos casos.
 - Long Pooling pode ser habilitado no nível Queue ou nível API usando WaitTimeSeconds.
+
+## AWS SQS - FIFO Queue
+
+- First In - First Out, primeiro a entrar é o primeiro a sair, disponível a depender da região.
+- Nome do Queue deve terminar com `.fifo`.
+- Baixo Throughout (até 3.000 por segundo com Batching e 300 por segundo sem Batching).
+- Mensagens são processadas em ordem pelos consumidores.
+- Mensagens são enviadas somente uma vez.
+- Sem Delay por mensagem, somente por queue.
+- Possibilidade de fazer de-duplication usando "Duplication ID".
+- Message Groups:
+  - Possibilita agrupar mensagens por FIFO ordering usando Message GroupID.
+  - Somente um Worker pode ser designado por Message Group para que as mensagens sejam processadas em ordem.
+  - Message Group é somente uma Tag extra na mensagem.
+
+## AWS SQS - Extended Client
+
+- Limite da mensagem 256KB.
+- Usando SQS Extended Client (Java Library).
+
+## AWS SQS - Segurança
+
+- Criptografia em trânsito usando HTTPS endpoint.
+- Pode usar Server Side Encryption (SSE) usando KMS.
+- Pode usar CMK (Custom Master Key).
+- Pode ajustar Data Key Reuse Period entre 1 minuto e 24 horas.
+  - Com o Data Key Reuse Period baixo a KMS API será usada com frequência.
+  - Com o Data Key Reuse Period alto a KMS API será usada com menor frequência.
+- O Server Side Encryption criptografa somente o body da mensagem e não seu metadata (message ID, timestamp, attributes).
+- IAM Policy deve permitir o uso do SQS.
+- SQS Queue Access Policy:
+  - Controle granular sobre IP.
+  - Controle sobre o tempo de requisição.
+- Nenhum VPC endpoint deve ter acesso a internet para acessar o SQS.
+
+## AWS SQS API - Importante saber
+
+- CreateQueue.
+- DeleteQueue.
+- PurgeQueue.
+- SendMessage.
+- ReceiveMessage.
+- DeleteMessage.
+- ChangeMessageVisibility.
+- Batch API ajuda a reduzir custos e podemos usar para:
+  - SendMessage.
+  - DeleteMessage.
+  - ChangeMessageVisibility.
