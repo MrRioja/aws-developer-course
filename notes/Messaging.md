@@ -10,7 +10,7 @@
   - Usando SNS: Modelo pub/sub.
   - Usando Kinesis: Modelo de streaming em tempo real.
 
-## AWS SQS
+## AWS SQS - Simple Queue Service
 
 ## AWS SQS - Standard Queue
 
@@ -118,3 +118,109 @@
   - SendMessage.
   - DeleteMessage.
   - ChangeMessageVisibility.
+
+## AWS SNS - Simple Notification Service
+
+- Producer somente envia mensagem para 1 SNS Topic.
+- Podem existir até 10.000.000 de subscribers por Topic.
+- Os subscribers irão receber todas as mensagens enviadas.
+- Limite de 100.000 Topics.
+- Subscribers podem ser:
+  - SQS.
+  - Lambda.
+  - HTTP/HTTPS.
+  - Emails.
+  - SMS.
+  - Mobile notifications.
+
+## AWS SNS - Como publicar
+
+- Topic Publish (com seu servidor AWS, usando SDK):
+  - Criar Topic.
+  - Criar Subscription.
+  - Publish para o Topic.
+- Direct Publish (para mobile apps SDK):
+- Criar a plataforma da aplicação.
+- Criar a plataforma endpoint.
+- Publicar para a plataforma EndPoint.
+- Funciona com Google GCM, Apple APNS, Amazon ADM e outros.
+
+## AWS SNS - Fan Out (SNS + SQS)
+
+- Publique uma vez usando SNS e receba em vários SQS.
+- Totalmente dissociado.
+- Sem perda de dados.
+- Possibilidade de adicionar subscriber a qualquer momento.
+- SQS permite processamento retardado.
+- SQS permite retries of work.
+- Podem ter vários workers em um queue e só um worker em outra queue.
+
+## Kinesis
+
+- Kinesis é uma alternativa ao Apache Kafka.
+- Ideal para log de aplicação, metrics, IoT, clickStream.
+- Ideal para real-time big data.
+- Ideal para Streaming Processing Frameworks (spark, NiFi).
+- Dados são automaticamente replicados para 3 AZs.
+- Kinesis Streams: Baixa latência, escalonável.
+  - Stream são divididos em Shards/Partitions.
+  - Retenção dos dados é de 1 dia e pode ser estendido até 7 dias.
+  - Habilidade de reprocessar / replay data.
+  - Múltiplas aplicações podem acessar o mesmo stream.
+  - Processamento em tempo real e throughput escalonável.
+  - Uma vez que os dados são inseridos no Kinesis, eles não podem ser apagados (Immutability).
+  - Shards:
+    - 1 stream pode ser constituído por 1 ou mais shards.
+    - Capacidade por shard: 1MB/s ou 1.000 mensagens/s para escrita e 2MB/s para leitura.
+    - Cobrado por Shard provisionado. Pode ter quantos Shards forem necessários.
+    - Bathing ou por mensagem.
+    - Número de Shards pode ser ajustável conforme necessidade.
+    - Records são ordenados por Shard.
+- Kinesis Analytics: Para análise em tempo real de streams usando SQL.
+- Kinesis Firehose: Carrega o stream no S3, Redshift, ElasticSearch.
+
+## AWS Kinesis API - Put Records
+
+- PutRecord API + Partition Key é hashed para determinar Shard ID.
+- Mesma key vai para a mesma partition.
+- Mensagens enviadas recebem um número sequencial.
+- Escolha um Partition Key que seja distribuída para prevenir hot partition.
+- Use user_id se tiver vários usuários.
+- Não use estado_id se 90% dos usuários são do mesmo estado.
+- Use bathing com PutRecords para reduzir custo e aumentar throughput.
+- ProvisionedThroughoutExceeded é disparado se consumir acima do limite.
+- Podemos usar CLI, AWS SDK ou Producer Libraries de vários frameworks.
+
+## AWS Kinesis API - Consumers
+
+- Pode ser um consumidor normal (CLI, SDK, etc).
+- Pode usar Kinesis Client Library:
+  - KCL usa DynamoDB para fazer checkpoint offsets.
+  - KCL usa DynamoDB para rastrear outros workers e dividir o trabalho entre os Shards.
+
+## AWS Kinesis API - Security
+
+- Controle de acesso/autorização usando IAM Policies.
+- Criptografia em trânsito usando HTTPS endpoints.
+- Criptografia em repouso usando KMS.
+- Possibilidade de criptografar e descriptografar dados usando client side (mais complicado).
+- VPC endpoints disponível para Kinesis para acesso dentro do VPC.
+
+## AWS Kinesis Data Analytics
+
+- Análise em tempo real no Kinesis Streams usando SQL.
+- Kinesis Data Analytics:
+  - Auto scaling.
+  - Managed: Não é necessário provisionar servidores.
+  - Continuos: Tempo real.
+- Cobrado somente pelo que é usado.
+- Pode ciar Streams a partir de queries em tempo real.
+
+## AWS Kinesis Firehose
+
+- Gerenciado pela AWS.
+- Quase em tempo real (60ms de latência).
+- Carrega dados dentro do Redshift, Amazon S3, ElasticSearch, Splunk.
+- Escalonamento automático.
+- Suporta vários formatos de dados (cobrado por conversão).
+- Cobrado pela quantidade de dados que passam pelo Firehose.
