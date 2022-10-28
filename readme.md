@@ -62,9 +62,11 @@ Todas as anotações foram registradas nesse [arquivo](./notes/AWS%20CloudFormat
 Nessa seção foi abordado os serviços de monitoria e auditoria de logs. Foram vistas as principais funcionalidades do AWS X-Ray, CloudTrail e CloudWatch, bem como suas vantagens e propósitos.
 Todos os detalhes dos serviços vistos nessa seção se encontram [nesse arquivo](./notes/AWS%20Monitoring%2C%20audit%20and%20troubleshooting.md).
 
-### Seção 11: AWS Integração e Messaging 📚
+### Seção 11: AWS Integração e Messaging ✅
 
-### Seção 12: AWS Serverless Lambda 📌
+Nessa seção vimos os serviços: SQS, SQN e Kinesis, além de suas principais configurações e suas diferenças em relação a uso. Todos os detalhes visto nesse módulo foram registrados [nesse arquivo](./notes/Messaging.md).
+
+### Seção 12: AWS Serverless Lambda 📚
 
 ### Seção 13: AWS Serverless DynamoDB 📌
 
