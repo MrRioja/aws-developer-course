@@ -66,9 +66,11 @@ Todos os detalhes dos serviços vistos nessa seção se encontram [nesse arquivo
 
 Nessa seção vimos os serviços: SQS, SQN e Kinesis, além de suas principais configurações e suas diferenças em relação a uso. Todos os detalhes visto nesse módulo foram registrados [nesse arquivo](./notes/Messaging.md).
 
-### Seção 12: AWS Serverless Lambda 📚
+### Seção 12: AWS Serverless Lambda ✅
 
-### Seção 13: AWS Serverless DynamoDB 📌
+Foram abordadas as vantagens, características e configurações da AWS Lambda. Também foram vistas as boas práticas ao trabalhar com esse serviço e alguns exemplos do que podemos construir ao utiliza-lo. Todos esses tópicos estão [detalhados aqui](./notes/AWS%20Serverless.md).
+
+### Seção 13: AWS Serverless DynamoDB 📚
 
 ### Seção 14: AWS Serverless API Gateway, SAM e Cognito 📌
 
