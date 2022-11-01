@@ -66,3 +66,36 @@
   - Código + dependências não podem ultrapassar 250MB.
   - Pode utilizar a pasta `/temp` para carregar outros arquivos no startup.
   - Tamanho das Environment Variables: 4KB.
+
+### Lambda - Version
+
+- Quando se usa uma Lambda Function, é utilizado a versão **$LATEST**.
+- Quando estamos prontos para publicar um Lambda Function, criamos um Version.
+- Versions são imutáveis.
+- Versions: número da versão incrementada a cada nova versão.
+- Version recebe seu próprio ARN (Amazon Resource Name).
+- Version = Código + configuração (nada pode ser mudado).
+- Todas Versions da Lambda Function podem ser acessadas.
+
+### Lambda - Aliases
+
+- Aliases são pointers para versões da Lambda Function.
+- Nós podemos definir aliases e apontá-los cada qual para um Version diferente de uma Lambda Function.
+- Aliases são mutáveis.
+- Aliases permitem Blue/Green Deployment usando weight para Lambda Function.
+- Aliases habilitam configurações estáveis de triggers de eventos e destinos.
+
+### Lambda - Melhores práticas
+
+- Faça o trabalho pesado fora da função handler. Exemplos:
+  - Conectar ao banco de dados.
+  - Inicializar AWS SDK.
+  - Pull Dependencies.
+- Utilize Environment Variables para:
+  - Database Connection Strings, buckets S3.
+  - Senhas ou outros dados sensíveis devem ser criptografados usando KMS.
+- Minimize o tamanho do Deployment Package conforme a necessidade da aplicação.
+  - Crie microservice. Cada Lambda Function executa somente uma função.
+  - Não esqueça os limites AWS Lambda.
+- Nunca faça uma Lambda function chamar ela mesma.
+- Não coloque uma Lambda Function dentro de um VPC, só se for extremamente necessário.
