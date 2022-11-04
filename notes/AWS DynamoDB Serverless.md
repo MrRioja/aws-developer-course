@@ -165,3 +165,65 @@
   - Aumenta o throughput e o RCU consumido.
   - Limitar o impacto do Parallel Scans do mesmo jeito que é feito com Scans.
 - Pode-se usar ProjectionExpression + FilterExpression.
+
+## DynamoDB - Local Secondary Index (LSI)
+
+- Key alternativo para tabela, local ao hash key.
+- Máximo de 5 Local Secondary Indexes por tabela.
+- Sort Key consiste de exatamente um atributo.
+- O atributo que você escolher deve ser String, Number ou Binary.
+- LSI deve ser definido no momento da criação da tabela.
+
+## DynamoDB - Global Secondary Index (GSI)
+
+- Para aumentar a velocidade dos Queries para atributos que não são keys, use Global Secondary Index.
+- GSI = Partition Key + Sort Key (opcional).
+- Index é uma "nova" tabela e podemos projetar atributos a ela:
+  - A Partition Key e Sort Key da tabela original são sempre projetada (KEYS_ONLY).
+  - Pode-se especificar atributos para projetar (INCLUDE).
+  - Pode-se usar todos os atributos da tabela principal (ALL).
+- Deve-se definir RCU/WCU para o índice.
+- Possibilidade de adicionar/modificar GSI.
+
+## DynamoDB - Concurrency
+
+- DynamoDB tem uma função chamada **Conditional Update/Delete**.
+- Isso garante que o item não foi modificado antes de ser alterado.
+- Isso faz o DynamoDB Optimistic Locking / Concurrency Database.
+
+## DynamoDB - DAX (DynamoDB Accelerator)
+
+- Não é necessário nenhuma alteração no DynamoDB.
+- Escrita vai para o DAX e ele escreve no DynamoDB.
+- Latência de microssegundos para leituras e queries no cache.
+- Resolver o problema de Hot Key (muitas leituras na mesma partição).
+- 5 minutos de TTL (time to live) padrão do cache.
+- Até 10 nodes no cluster.
+- Multi AZ, sendo no mínimo 3 nodes recomendados para produção.
+- Segurança: Criptografia em repouso com KMS, VPC, IAM, CloudTrail, etc.
+
+## DynamoDB - Streams
+
+- Mudanças no DynamoDB (Create, Update, Delete) podem iniciar um DynamoDB Stream.
+- Esse Stream pode ser lido pela AWS Lambda para:
+  - Reagir a mudanças em tempo real, como por exemplo enviar um e-mail de boas vindas.
+  - Análise.
+  - Criar derivative tables / views.
+  - Insert no ElasticSearch.
+- Possível implementar Cross Region Replication usando Streams.
+- Stream tem 24 horas de retenção.
+
+## DynamoDB - Segurança e outros recursos
+
+- Segurança:
+  - VPC Endpoint disponível para acessar o DynamoDB sem internet.
+  - Acesso totalmente controlado pelo IAM.
+  - Criptografia em repouso usando KMS.
+  - Criptografia em transito usando SSL/TLS.
+- Backup e Restore:
+  - Restauração Point in time, igual ao RDS.
+  - Sem impacto na performance.
+- Global Tables:
+  - Multi Region, replicável e alta performance.
+- Amazon DMS pode ser usado para migrar para DynamoDB dados do: Mongo, Oracle, MySQL, S3, etc.
+- É possível instalar DynamoDB em uma máquina local para desenvolvimento.
