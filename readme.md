@@ -70,9 +70,11 @@ Nessa seção vimos os serviços: SQS, SQN e Kinesis, além de suas principais c
 
 Foram abordadas as vantagens, características e configurações da AWS Lambda. Também foram vistas as boas práticas ao trabalhar com esse serviço e alguns exemplos do que podemos construir ao utiliza-lo. Todos esses tópicos estão [detalhados aqui](./notes/AWS%20Serverless.md).
 
-### Seção 13: AWS Serverless DynamoDB 📚
+### Seção 13: AWS Serverless DynamoDB ✅
 
-### Seção 14: AWS Serverless API Gateway, SAM e Cognito 📌
+Nessa seção vimos as principais características do DynamoDB, como as leituras e escritas são calculadas e cobradas, os tipos de leituras possíveis, os tipos de index, o que é e como usar DAX e Streams e os principais cuidados com a segurança quando o assunto é DynamoDB. Esses e outros tópicos estão descritos detalhadamente [nesse arquivo](./notes/AWS%20DynamoDB%20Serverless.md) de anotações.
+
+### Seção 14: AWS Serverless API Gateway, SAM e Cognito 📚
 
 ### Seção 15: ECS - Elastic Container service 📌
 
