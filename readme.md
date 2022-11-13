@@ -6,11 +6,11 @@ O curso preparatório para certificação AWS Developer tem como objetivo ensina
 
 ## Legenda
 
-| Status       | Ícone |
-| ------------ | ----- |
-| Não iniciado | 📌    |
-| Em progresso | 📚    |
-| Concluído    | ✅    |
+|    Status    | Ícone |
+| :----------: | :---: |
+| Não iniciado |  📌   |
+| Em progresso |  📚   |
+|  Concluído   |  ✅   |
 
 ## Seções de estudo ✍🏼
 
@@ -74,9 +74,11 @@ Foram abordadas as vantagens, características e configurações da AWS Lambda. 
 
 Nessa seção vimos as principais características do DynamoDB, como as leituras e escritas são calculadas e cobradas, os tipos de leituras possíveis, os tipos de index, o que é e como usar DAX e Streams e os principais cuidados com a segurança quando o assunto é DynamoDB. Esses e outros tópicos estão descritos detalhadamente [nesse arquivo](./notes/AWS%20DynamoDB%20Serverless.md) de anotações.
 
-### Seção 14: AWS Serverless API Gateway, SAM e Cognito 📚
+### Seção 14: AWS Serverless API Gateway, SAM e Cognito ✅
 
-### Seção 15: ECS - Elastic Container service 📌
+O conhecimento adquirido nessa seção é constituído por diversas configurações sobre API Gateway, passando pelo seus fundamentos e cenários de aplicação e indo até configurações mais complexas como CORS, Caching, Deployment, Documentação de APIs, Monitoramento e Segurança. Também foram abordados temas a respeito do Cognito e SAM. As anotações de tudo que foi visto foram descritas em arquivos separados por arquivos e estão disponíveis a seguir: [API Gateway](./notes/AWS%20API%20Gateway.md), [Cognito](./notes/AWS%20Cognito.md) e [SAM](./notes/AWS%20SAM.md).
+
+### Seção 15: ECS - Elastic Container service 📚
 
 ### Seção 16: Segurança na AWS 📌
 
