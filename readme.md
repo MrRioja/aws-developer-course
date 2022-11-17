@@ -78,9 +78,11 @@ Nessa seção vimos as principais características do DynamoDB, como as leituras
 
 O conhecimento adquirido nessa seção é constituído por diversas configurações sobre API Gateway, passando pelo seus fundamentos e cenários de aplicação e indo até configurações mais complexas como CORS, Caching, Deployment, Documentação de APIs, Monitoramento e Segurança. Também foram abordados temas a respeito do Cognito e SAM. As anotações de tudo que foi visto foram descritas em arquivos separados por arquivos e estão disponíveis a seguir: [API Gateway](./notes/AWS%20API%20Gateway.md), [Cognito](./notes/AWS%20Cognito.md) e [SAM](./notes/AWS%20SAM.md).
 
-### Seção 15: ECS - Elastic Container service 📚
+### Seção 15: ECS - Elastic Container service ✅
 
-### Seção 16: Segurança na AWS 📌
+Nessa seção vimos como utilizar container's no ambiente AWS utilizando EC2 ou Fargate. Vimos as principais diferenças entre os dois tipos, suas principais configurações e como utilizar Load Balancer com os container's. As anotações sobre os serviços [ECS](./notes/AWS%20ECS.md) e [ECR](./notes/AWS%20ECR.md) foram documentadas nos seus respectivos arquivos.
+
+### Seção 16: Segurança na AWS 📚
 
 ### Seção 17: AWS - Outros serviços 📌
 
