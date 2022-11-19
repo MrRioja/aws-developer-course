@@ -82,9 +82,11 @@ O conhecimento adquirido nessa seção é constituído por diversas configuraç�
 
 Nessa seção vimos como utilizar container's no ambiente AWS utilizando EC2 ou Fargate. Vimos as principais diferenças entre os dois tipos, suas principais configurações e como utilizar Load Balancer com os container's. As anotações sobre os serviços [ECS](./notes/AWS%20ECS.md) e [ECR](./notes/AWS%20ECR.md) foram documentadas nos seus respectivos arquivos.
 
-### Seção 16: Segurança na AWS 📚
+### Seção 16: Segurança na AWS ✅
 
-### Seção 17: AWS - Outros serviços 📌
+Nessa seção vimos como tornar nossa infraestrutura na AWS mais segura possível utilizando as melhores praticas na nuvem. Para isso, vimos como podemos utilizar o serviço [KMS](./notes/AWS%20KMS.md) para realizar criptografia de dados em diversos serviços AWS e vimos também como utilizar [Parameter Store](./notes/AWS%20Parameter%20Store.md) da maneira correta e mais segura possível para armazenar variáveis ambientes e configurações utilizadas por diversos outros serviços dentro da nossa infraestrutura cloud.
+
+### Seção 17: AWS - Outros serviços 📚
 
 ### Seção 18: Limpando o ambiente AWS 📌
 
