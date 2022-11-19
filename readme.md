@@ -90,8 +90,10 @@ Nessa seção vimos como tornar nossa infraestrutura na AWS mais segura possíve
 
 Vimos mais alguns serviços disponíveis na AWS que podem auxiliar a implementação de serviços dentro da nossa infraestrutura na nuvem AWS.
 
-### Seção 18: Limpando o ambiente AWS 📚
+### Seção 18: Limpando o ambiente AWS ✅
 
-### Seção 19: Pratica para o exame 📌
+Nessa seção fizemos a limpeza na nossa conta com a exclusão de todos os serviços criados durante as aulas afim de evitar cobranças indesejadas.
+
+### Seção 19: Pratica para o exame 📚
 
 ### Seção 20: FAQ 📌
