@@ -94,6 +94,8 @@ Vimos mais alguns serviços disponíveis na AWS que podem auxiliar a implementa�
 
 Nessa seção fizemos a limpeza na nossa conta com a exclusão de todos os serviços criados durante as aulas afim de evitar cobranças indesejadas.
 
-### Seção 19: Pratica para o exame 📚
+### Seção 19: Pratica para o exame ✅
 
-### Seção 20: FAQ 📌
+Realizado simulado para prova da certificação AWS Developer.
+
+### Seção 20: FAQ 📚
