@@ -98,4 +98,6 @@ Nessa seção fizemos a limpeza na nossa conta com a exclusão de todos os servi
 
 Realizado simulado para prova da certificação AWS Developer.
 
-### Seção 20: FAQ 📚
+### Seção 20: FAQ ✅
+
+Resposta em video sobre uma dúvida enviada no forum por alunos do curso.
