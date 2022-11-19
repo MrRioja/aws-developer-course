@@ -86,9 +86,11 @@ Nessa seção vimos como utilizar container's no ambiente AWS utilizando EC2 ou 
 
 Nessa seção vimos como tornar nossa infraestrutura na AWS mais segura possível utilizando as melhores praticas na nuvem. Para isso, vimos como podemos utilizar o serviço [KMS](./notes/AWS%20KMS.md) para realizar criptografia de dados em diversos serviços AWS e vimos também como utilizar [Parameter Store](./notes/AWS%20Parameter%20Store.md) da maneira correta e mais segura possível para armazenar variáveis ambientes e configurações utilizadas por diversos outros serviços dentro da nossa infraestrutura cloud.
 
-### Seção 17: AWS - Outros serviços 📚
+### Seção 17: AWS - Outros serviços ✅
 
-### Seção 18: Limpando o ambiente AWS 📌
+Vimos mais alguns serviços disponíveis na AWS que podem auxiliar a implementação de serviços dentro da nossa infraestrutura na nuvem AWS.
+
+### Seção 18: Limpando o ambiente AWS 📚
 
 ### Seção 19: Pratica para o exame 📌
 
